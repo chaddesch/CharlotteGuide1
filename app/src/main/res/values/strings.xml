@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Charlotte Guide</string>
+    <string name="birdsong_name">Birdsong Brewing Co.</string>
+    <string name="birdsong_address">1016 N Davidson St, Charlotte, NC 28205</string>
+    <string name="birdsong_details">Tu&#8211;F 10am&#8211;3pm, Sa 12&#8211;10pm, Su 12&#8211;8pm</string>
+    <string name="birdsong_number">017043321810</string>
+    <string name="blue_blaze_address">528 S Turner Ave, Charlotte, NC 28208</string>
+    <string name="heist_address">2909 N Davidson St #200, Charlotte, NC 28205</string>
+    <string name="lenny_boy_address">3000 S Tryon St, Charlotte, NC 28217</string>
+    <string name="noda_address">2921 N Tryon St, Charlotte, NC 28206</string>
+    <string name="omb_address">4150 Yancey Rd, Charlotte, NC 28217</string>
+    <string name="rcc_address">245 Clanton Rd, Charlotte, NC 28217</string>
+    <string name="sugar_creek_address">215 Southside Dr, Charlotte, NC 28217</string>
+    <string name="sycamore_address">2161 Hawkins St, Charlotte, NC 28203</string>
+    <string name="triple_c_address">2900 Griffith St, Charlotte, NC 28203</string>
+</resources>
