@@ -8,53 +8,60 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class Location {
 
-    /** Default translation for the word */
+    /**
+     * Location name
+     */
     private int mLocation;
 
-    /** Miwok translation for the word */
+    /**
+     * Open hours or phone number for the locatio
+     */
     private int mLocationDetails;
 
-    /** Image resource ID for the word */
+    /**
+     * Image resource ID for the location
+     */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
-    /** Constant value that represents no image was provided for this word */
+    /**
+     * Constant value that represents no image was provided for this location
+     */
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    /**The address per location.*/
+    /**
+     * The address per location.
+     */
     private int mLocationAddress;
 
-    /**The phone number per location.*/
-    private int mLocationNumber;
 
     /**
-     * Create a new Word object.
+     * Create a new Location object.
      *
-     * @param location is the word in a language that the user is already familiar with
-     *                           (such as English)
-     * @param locationDetails location's address
+     * @param location        is the name of the location
+     * @param locationDetails is either the open hours or the phone number for the location
+     * @param locationAddress is the address for the given location
      */
-    public Location(int location, int locationDetails, int locationAddress, int locationNumber) {
+    public Location(int location, int locationDetails, int locationAddress) {
         mLocation = location;
         mLocationDetails = locationDetails;
         mLocationAddress = locationAddress;
-        mLocationNumber = locationNumber;
     }
 
     /**
      * Create a new Word object.
      *
-     * @param location is the word in a language that the user is already familiar with
-     *                           (such as English)
-     * @param locationDetails is the word in the Miwok language
+     * @param location        is the name of the location
+     * @param locationDetails is either the open hours or the phone number for the location
+     * @param locationAddress is the address for the given location
      * @param imageResourceId is the drawable resource ID for the image associated with the word
      */
-    public Location(int location, int locationDetails, int imageResourceId, int locationAddress, int locationNumber) {
+    public Location(int location, int locationDetails, int imageResourceId, int locationAddress) {
         mLocation = location;
         mLocationDetails = locationDetails;
         mImageResourceId = imageResourceId;
         mLocationAddress = locationAddress;
-        mLocationNumber = locationNumber;
     }
+
 
     /**
      * Get the Location Name.
@@ -84,11 +91,12 @@ public class Location {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 
-    public int getLocationAddress(){
+    /**
+     * @return location address
+     */
+
+    public int getLocationAddress() {
         return mLocationAddress;
     }
 
-    public int getLocationNumber(){
-        return mLocationNumber;
-    }
 }

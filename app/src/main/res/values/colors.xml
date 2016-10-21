@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF5722</color>
     <color name="category_breweries">@android:color/holo_red_dark</color>
     <color name="colorBackground">#FFE0B2</color>
+    <color name="category_amusements">@android:color/holo_blue_dark</color>
+    <color name="category_bandb">@android:color/holo_green_dark</color>
+    <color name="category_museums">@android:color/holo_purple</color>
 </resources>

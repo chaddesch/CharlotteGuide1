@@ -1,13 +1,16 @@
 package com.example.chad.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,14 +20,16 @@ import java.util.ArrayList;
 
 public class LocationAdapter extends ArrayAdapter<Location> {
 
-    /** Resource ID for the background color for this list of words */
+    /**
+     * Resource ID for the background color for this list of locations
+     */
     private int mColorResourceId;
 
     /**
      * Create a new {@link LocationAdapter} object.
      *
-     * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param locations is the list of {@link Location}s to be displayed.
+     * @param context         is the current context (i.e. Activity) that the adapter is being created in.
+     * @param locations       is the list of {@link Location}s to be displayed.
      * @param colorResourceId is the resource ID for the background color for this list of words
      */
     public LocationAdapter(Context context, ArrayList<Location> locations, int colorResourceId) {
@@ -33,7 +38,7 @@ public class LocationAdapter extends ArrayAdapter<Location> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, final View convertView, final ViewGroup parent) {
         // Check if an existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if (listItemView == null) {
@@ -41,24 +46,25 @@ public class LocationAdapter extends ArrayAdapter<Location> {
                     R.layout.list_item, parent, false);
         }
 
-        // Get the {@link Word} object located at this position in the list
+        // Get the {@link Location} object located at this position in the list
         Location currentLocation = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID miwok_text_view.
-        TextView location = (TextView) listItemView.findViewById(R.id.location);
+        // Find the TextView in the list_item.xml layout with the ID location.
+        final TextView location = (TextView) listItemView.findViewById(R.id.location);
         // Get the Location from the currentLocation object and set this text on
         // the Location TextView.
         location.setText(currentLocation.getLocation());
 
-        // Find the TextView in the list_item.xml layout with the ID default_text_view.
-        TextView locationDetails = (TextView) listItemView.findViewById(R.id.location_details);
-        // Get the default translation from the currentWord object and set this text on
+
+        // Find the TextView in the list_item.xml layout with the ID location_details.
+        final TextView locationDetails = (TextView) listItemView.findViewById(R.id.location_details);
+        // Get the location details from the currentLocation object and set this text on
         // the default TextView.
         locationDetails.setText(currentLocation.getLocationDetails());
 
         // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
-        // Check if an image is provided for this word or not
+        // Check if an image is provided for this location or not
         if (currentLocation.hasImage()) {
             // If an image is available, display the provided image based on the resource ID
             imageView.setImageResource(currentLocation.getImageResourceId());

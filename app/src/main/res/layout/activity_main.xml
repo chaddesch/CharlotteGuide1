@@ -11,11 +11,44 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark">
+        android:background="@color/category_amusements">
+        <TextView
+            android:id="@+id/amusements"
+            style="@style/CategoryStyle"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/amusements_name" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/category_bandb">
+        <TextView
+            android:id="@+id/bandb"
+            style="@style/CategoryStyle"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/bandb_name" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/category_breweries">
         <TextView
             android:id="@+id/breweries"
             style="@style/CategoryStyle"
             android:background="?android:attr/selectableItemBackground"
-            android:text="Breweries" />
+            android:text="@string/breweries_name" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/category_museums">
+        <TextView
+            android:id="@+id/museums"
+            style="@style/CategoryStyle"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/museums_name" />
     </FrameLayout>
 </LinearLayout>
